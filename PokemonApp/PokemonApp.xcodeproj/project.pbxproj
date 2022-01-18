@@ -17,6 +17,7 @@
 		C3663F40279748FC0075A892 /* PokemonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3663F3F279748FC0075A892 /* PokemonAppTests.swift */; };
 		C3663F4A279748FC0075A892 /* PokemonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3663F49279748FC0075A892 /* PokemonAppUITests.swift */; };
 		C3663F4C279748FC0075A892 /* PokemonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3663F4B279748FC0075A892 /* PokemonAppUITestsLaunchTests.swift */; };
+		C3663F62279749DC0075A892 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3663F61279749DC0075A892 /* Constants.swift */; };
 		E5B1E8215E0AC1F261D49EE0 /* Pods_PokemonApp_PokemonAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D127157ED4E31F65838069F /* Pods_PokemonApp_PokemonAppUITests.framework */; };
 		FEEE46558CC94ACEFD57A8A5 /* Pods_PokemonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682F9CE8F6B19D0489093580 /* Pods_PokemonApp.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		C3663F45279748FC0075A892 /* PokemonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3663F49279748FC0075A892 /* PokemonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAppUITests.swift; sourceTree = "<group>"; };
 		C3663F4B279748FC0075A892 /* PokemonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C3663F61279749DC0075A892 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DF98CED7DCED242845CB0B8B /* Pods-PokemonAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonAppTests.release.xcconfig"; path = "Target Support Files/Pods-PokemonAppTests/Pods-PokemonAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +103,6 @@
 				0B50D73DE32011F63C94E6D7 /* Pods-PokemonAppTests.debug.xcconfig */,
 				DF98CED7DCED242845CB0B8B /* Pods-PokemonAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,12 +131,16 @@
 		C3663F27279748FA0075A892 /* PokemonApp */ = {
 			isa = PBXGroup;
 			children = (
-				C3663F28279748FA0075A892 /* AppDelegate.swift */,
-				C3663F2A279748FA0075A892 /* SceneDelegate.swift */,
+				C3663F60279749BC0075A892 /* Extensions */,
+				C3663F5F279749B60075A892 /* Managers */,
+				C3663F5E279749B00075A892 /* Models */,
+				C3663F5D279749AA0075A892 /* Helper */,
+				C3663F5C279749A10075A892 /* ViewControllers */,
+				C3663F5B2797499E0075A892 /* Views */,
+				C3663F5A279749960075A892 /* ViewModels */,
+				C3663F592797498E0075A892 /* Storyboards */,
+				C3663F58279749870075A892 /* Resources */,
 				C3663F2C279748FA0075A892 /* ViewController.swift */,
-				C3663F2E279748FA0075A892 /* Main.storyboard */,
-				C3663F31279748FC0075A892 /* Assets.xcassets */,
-				C3663F33279748FC0075A892 /* LaunchScreen.storyboard */,
 				C3663F36279748FC0075A892 /* Info.plist */,
 			);
 			path = PokemonApp;
@@ -156,6 +161,75 @@
 				C3663F4B279748FC0075A892 /* PokemonAppUITestsLaunchTests.swift */,
 			);
 			path = PokemonAppUITests;
+			sourceTree = "<group>";
+		};
+		C3663F58279749870075A892 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C3663F28279748FA0075A892 /* AppDelegate.swift */,
+				C3663F2A279748FA0075A892 /* SceneDelegate.swift */,
+				C3663F61279749DC0075A892 /* Constants.swift */,
+				C3663F31279748FC0075A892 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C3663F592797498E0075A892 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C3663F2E279748FA0075A892 /* Main.storyboard */,
+				C3663F33279748FC0075A892 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C3663F5A279749960075A892 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C3663F5B2797499E0075A892 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C3663F5C279749A10075A892 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C3663F5D279749AA0075A892 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C3663F5E279749B00075A892 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3663F5F279749B60075A892 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C3663F60279749BC0075A892 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E460E499CEC71F627424F54C /* Frameworks */ = {
@@ -179,6 +253,8 @@
 				C3663F21279748FA0075A892 /* Sources */,
 				C3663F22279748FA0075A892 /* Frameworks */,
 				C3663F23279748FA0075A892 /* Resources */,
+				AFFF9309330E1433E62279EF /* [CP] Embed Pods Frameworks */,
+				C3663F6327974A540075A892 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -216,6 +292,7 @@
 				C3663F41279748FC0075A892 /* Sources */,
 				C3663F42279748FC0075A892 /* Frameworks */,
 				C3663F43279748FC0075A892 /* Resources */,
+				CCE3B25500BF61B9CF2D5C2A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,6 +441,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AFFF9309330E1433E62279EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApp/Pods-PokemonApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApp/Pods-PokemonApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonApp/Pods-PokemonApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3663F6327974A540075A892 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		CCE3B25500BF61B9CF2D5C2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApp-PokemonAppUITests/Pods-PokemonApp-PokemonAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApp-PokemonAppUITests/Pods-PokemonApp-PokemonAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonApp-PokemonAppUITests/Pods-PokemonApp-PokemonAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,6 +503,7 @@
 				C3663F2D279748FA0075A892 /* ViewController.swift in Sources */,
 				C3663F29279748FA0075A892 /* AppDelegate.swift in Sources */,
 				C3663F2B279748FA0075A892 /* SceneDelegate.swift in Sources */,
+				C3663F62279749DC0075A892 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,8 +689,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,8 +720,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

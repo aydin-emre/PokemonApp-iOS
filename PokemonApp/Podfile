@@ -6,6 +6,11 @@ target 'PokemonApp' do
   use_frameworks!
 
   # Pods for PokemonApp
+  pod 'Alamofire'
+  pod 'EAAlert'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RealmSwift'
 
   target 'PokemonAppTests' do
     inherit! :search_paths
