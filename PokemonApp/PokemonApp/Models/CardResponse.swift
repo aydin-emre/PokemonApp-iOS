@@ -9,6 +9,6 @@ import Foundation
 
 struct CardResponse: Codable {
 
-    let cards: [Card]
+    let cards: [Card]?
 
 }

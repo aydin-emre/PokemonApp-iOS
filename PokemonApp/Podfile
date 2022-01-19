@@ -11,6 +11,7 @@ target 'PokemonApp' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RealmSwift'
+  pod 'SDWebImage'
 
   target 'PokemonAppTests' do
     inherit! :search_paths

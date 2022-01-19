@@ -9,23 +9,23 @@ import Foundation
 
 struct Card: Codable {
 
-    let id, name: String
-    let nationalPokedexNumber: Int
-    let imageURL, imageURLHiRes: String
-    let types: [Cost]
-    let supertype: Supertype
-    let subtype: Subtype
-    let hp: String
+    let id, name: String?
+    let nationalPokedexNumber: Int?
+    let imageURL, imageURLHiRes: String?
+    let types: [Cost]?
+    let supertype: Supertype?
+    let subtype: Subtype?
+    let hp: String?
     let retreatCost: [Cost]?
     let convertedRetreatCost: Int?
-    let number, artist: String
+    let number, artist: String?
     let rarity: String?
-    let series: Series
+    let series: Series?
     let cardSet: String?
-    let setCode: String
+    let setCode: String?
     let text: [String]?
     let attacks: [Attack]?
-    let weaknesses: [Resistance]
+    let weaknesses: [Resistance]?
     let ability: Ability?
     let evolvesFrom: String?
     let resistances: [Resistance]?
