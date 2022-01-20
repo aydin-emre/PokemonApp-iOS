@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BuV-o5-DaR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fm4-Zm-CIZ">
-                                <rect key="frame" x="20" y="0.0" width="374" height="896"/>
+                                <rect key="frame" x="20" y="138" width="374" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QRo-t4-9Or">
                                     <size key="itemSize" width="245" height="387"/>
@@ -66,28 +66,75 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Health Points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mmk-KT-JK2" customClass="DesignableUITextField" customModule="PokemonApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="96" width="374" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="search" textContentType="tel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="magnifyingglass" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fm4-Zm-CIZ" secondAttribute="trailing" constant="20" id="8Hd-lf-eDo"/>
+                            <constraint firstItem="Fm4-Zm-CIZ" firstAttribute="top" secondItem="mmk-KT-JK2" secondAttribute="bottom" constant="8" id="Ca5-KL-25z"/>
                             <constraint firstAttribute="bottom" secondItem="Fm4-Zm-CIZ" secondAttribute="bottom" id="RGt-EY-Tag"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mmk-KT-JK2" secondAttribute="trailing" constant="20" id="UHH-66-FIt"/>
+                            <constraint firstItem="mmk-KT-JK2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XCH-9b-HJS"/>
+                            <constraint firstItem="mmk-KT-JK2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="YGB-Jh-Hag"/>
                             <constraint firstItem="Fm4-Zm-CIZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fR8-DG-7Av"/>
-                            <constraint firstItem="Fm4-Zm-CIZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oYk-Dl-GEg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qCQ-xL-h4d">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Fm4-Zm-CIZ" id="vwP-2p-2Qg"/>
+                        <outlet property="searchTextField" destination="mmk-KT-JK2" id="gj1-kX-BJR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="134.59821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Xz-em-Htl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BuV-o5-DaR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kVC-Hq-ddQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ThD-a3-L2w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZu-Ya-q8w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="134.59821428571428"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="mmk-KT-JK2">
+            <size key="intrinsicContentSize" width="191" height="34"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

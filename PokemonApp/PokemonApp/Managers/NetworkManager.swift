@@ -23,7 +23,7 @@ public class NetworkManager {
 
     var eaAlert: EAAlert?
 
-    private func request<T: Decodable>(of type: T.Type, forPath path: String, method: HTTPMethod = .post, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, showLoadingView: Bool = false, completion: @escaping (Decodable?) -> Void) {
+    private func request<T: Decodable>(of type: T.Type, forPath path: String, method: HTTPMethod = .post, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, showLoadingView: Bool = false, completion: @escaping (Decodable?, Error?) -> Void) {
         var viewLoading: UIView!
         if showLoadingView {
             viewLoading = loadingView()
@@ -64,27 +64,27 @@ public class NetworkManager {
                        parameters: inlineParameters,
                        encoding: encoding,
                        headers: inlineHeaders)
-                .validate(statusCode: 200..<500)
+                .validate(statusCode: 200..<400)
                 .responseDecodable(of: type) { (response) in
-                DispatchQueue.main.async {
-                    if let viewLoading = viewLoading {
-                        viewLoading.isHidden = true
+                    DispatchQueue.main.async {
+                        if let viewLoading = viewLoading {
+                            viewLoading.isHidden = true
+                        }
+                    }
+                    switch response.result {
+                    case .success(_):
+                        guard let responseValue = response.value else { return }
+                        completion(responseValue, nil)
+                        if self.shouldShowLogs {
+                            print("\n------- RESPONSE: ------\n \(responseValue)\n--------------------------\n")
+                        }
+                    case .failure(_):
+                        completion(nil, response.error)
+                        if self.shouldShowLogs {
+                            print("\n-------- ERROR: --------\n \(String(describing: response.error))\n-------------------------\n")
+                        }
                     }
                 }
-                switch response.result {
-                case .success(_):
-                    guard let responseValue = response.value else { return }
-                    completion(responseValue)
-                    if self.shouldShowLogs {
-                        print("\n------- RESPONSE: ------\n \(responseValue)\n--------------------------\n")
-                    }
-                case .failure(_):
-                    completion(nil)
-                    if self.shouldShowLogs {
-                        print("\n-------- ERROR: --------\n \(String(describing: response.error))\n-------------------------\n")
-                    }
-                }
-            }
         } else if let eaAlert = eaAlert {
             if let viewLoading = viewLoading {
                 viewLoading.isHidden = true
@@ -93,11 +93,13 @@ public class NetworkManager {
         }
     }
 
-    func cards(with health: Int, completion: @escaping (Result<CardResponse, NetworkError>) -> Void) {
+    func cards(with health: Int, completion: @escaping (Result<CardResponse, Error>) -> Void) {
         let parameters = ["hp": "gte\(health)"]
-        request(of: CardResponse.self, forPath: cardsPath, method: .get, parameters: parameters, showLoadingView: true) { response in
+        request(of: CardResponse.self, forPath: cardsPath, method: .get, parameters: parameters, showLoadingView: true) { response, error in
             if let response = response as? CardResponse {
                 completion(.success(response))
+            } else if let error = error {
+                completion(.failure(error))
             } else {
                 completion(.failure(NetworkError.objectParseError))
             }

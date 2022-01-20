@@ -9,8 +9,8 @@ import Foundation
 
 struct Ability: Codable {
 
-    let name, text: String
-    let type: TypeEnum
+    let name, text: String?
+    let type: TypeEnum?
 
 }
 

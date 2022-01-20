@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		40A36C1A94B56C36A132CE66 /* Pods_PokemonAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCD06BA8AED975277E18087 /* Pods_PokemonAppTests.framework */; };
+		C333DF622799B4AC00D58426 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C333DF612799B4AC00D58426 /* DesignableUITextField.swift */; };
+		C333DF642799D80500D58426 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C333DF632799D80500D58426 /* UITextFieldExtension.swift */; };
 		C3663F29279748FA0075A892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3663F28279748FA0075A892 /* AppDelegate.swift */; };
 		C3663F2B279748FA0075A892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3663F2A279748FA0075A892 /* SceneDelegate.swift */; };
 		C3663F30279748FA0075A892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3663F2E279748FA0075A892 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		682F9CE8F6B19D0489093580 /* Pods_PokemonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCD06BA8AED975277E18087 /* Pods_PokemonAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93F6C9220E5771CB8096ABA /* Pods-PokemonApp-PokemonAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonApp-PokemonAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-PokemonApp-PokemonAppUITests/Pods-PokemonApp-PokemonAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C333DF612799B4AC00D58426 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
+		C333DF632799D80500D58426 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		C3663F25279748FA0075A892 /* PokemonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3663F28279748FA0075A892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3663F2A279748FA0075A892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +132,14 @@
 				DF98CED7DCED242845CB0B8B /* Pods-PokemonAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C333DF602799B49E00D58426 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				C333DF612799B4AC00D58426 /* DesignableUITextField.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		C3663F1C279748FA0075A892 = {
@@ -217,6 +229,7 @@
 		C3663F5B2797499E0075A892 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C333DF602799B49E00D58426 /* Custom */,
 				C3858DE7279897AF00E87A68 /* CollectionViewCell */,
 			);
 			path = Views;
@@ -264,6 +277,7 @@
 		C3663F60279749BC0075A892 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C333DF632799D80500D58426 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,8 +559,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3663F6D27974B060075A892 /* NetworkManager.swift in Sources */,
+				C333DF642799D80500D58426 /* UITextFieldExtension.swift in Sources */,
 				C3663F6527974AB60075A892 /* BaseViewController.swift in Sources */,
 				C3663F6B27974AED0075A892 /* NetworkError.swift in Sources */,
+				C333DF622799B4AC00D58426 /* DesignableUITextField.swift in Sources */,
 				C3663F77279759C70075A892 /* Attack.swift in Sources */,
 				C3663F29279748FA0075A892 /* AppDelegate.swift in Sources */,
 				C3858DE9279897C600E87A68 /* CardsCollectionViewCell.swift in Sources */,

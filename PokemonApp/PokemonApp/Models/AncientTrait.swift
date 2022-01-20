@@ -9,6 +9,6 @@ import Foundation
 
 struct AncientTrait: Codable {
 
-    let name, text: String
+    let name, text: String?
 
 }

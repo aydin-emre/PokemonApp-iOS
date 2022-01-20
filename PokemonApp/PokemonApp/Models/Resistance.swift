@@ -9,7 +9,7 @@ import Foundation
 
 struct Resistance: Codable {
 
-    let type: Cost
-    let value: String
+    let type: String?
+    let value: String?
 
 }
