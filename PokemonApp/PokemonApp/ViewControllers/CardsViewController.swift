@@ -22,7 +22,6 @@ class CardsViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupBindings()
-        cardsViewModel.requestData(with: 99)
     }
 
     func setupBindings() {
