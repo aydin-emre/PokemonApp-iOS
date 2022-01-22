@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RealmSwift
 
 class CardsViewController: BaseViewController {
 
@@ -21,14 +20,9 @@ class CardsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Pokemon App"
         // Do any additional setup after loading the view.
         setupBindings()
         cardsViewModel.requestData(with: 99)
-
-        DatabaseManager.shared.getFavorites { cards in
-            
-        }
     }
 
     func setupBindings() {
@@ -107,7 +101,7 @@ class CardsViewController: BaseViewController {
 
         // CollectionView Long Pressed
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(collectionViewItemLongPressed))
-        longPressGesture.minimumPressDuration = 0.5
+        longPressGesture.minimumPressDuration = 0.3
         longPressGesture.delaysTouchesBegan = true
         collectionView.addGestureRecognizer(longPressGesture)
     }
@@ -116,7 +110,14 @@ class CardsViewController: BaseViewController {
         guard gesture.state == .ended else { return }
 
         if let indexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) {
-            DatabaseManager.shared.addToFavorites(card: cards[indexPath.row])
+            let card = cards[indexPath.row]
+            DatabaseManager.shared.checkFavorites(card: card) { isFavorite in
+                isFavorite ? DatabaseManager.shared.removeFromFavorites(card: card) : DatabaseManager.shared.addToFavorites(card: card)
+
+                if let cell = self.collectionView.cellForItem(at: indexPath) as? CardsCollectionViewCell {
+                    cell.cardView.heartEffect(isFavorite)
+                }
+            }
         }
     }
 

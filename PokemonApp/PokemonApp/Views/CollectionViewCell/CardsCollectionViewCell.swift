@@ -10,22 +10,18 @@ import SDWebImage
 
 class CardsCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-
-    private var card: Card?
+    @IBOutlet weak var cardView: CardView!
 
     func configure(with card: Card) {
-        self.card = card
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .background).sync {
             if let imageURL = card.imageURL,
                let url = URL(string: imageURL) {
                 DispatchQueue.main.async {
-                    self.imageView.sd_setImage(with: url, completed: nil)
+                    self.cardView.imageView.sd_setImage(with: url, completed: nil)
                 }
             }
         }
-        titleLabel.text = card.name
+        cardView.titleLabel.text = card.name
     }
 
 }

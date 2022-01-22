@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cards View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="PokemonApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardsViewController" id="BYZ-38-t0r" customClass="CardsViewController" customModule="PokemonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fm4-Zm-CIZ">
-                                <rect key="frame" x="20" y="138" width="374" height="758"/>
+                                <rect key="frame" x="20" y="138" width="374" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QRo-t4-9Or">
                                     <size key="itemSize" width="245" height="387"/>
@@ -35,33 +35,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="245" height="387"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JBU-Al-30T">
-                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="340.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="JBU-Al-30T" secondAttribute="height" multiplier="0.72" id="Vft-qg-XUl"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPF-iT-K8D">
-                                                    <rect key="frame" x="8" y="348.5" width="229" height="30.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.24313725490196078" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGO-Kj-2xA" customClass="CardView" customModule="PokemonApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="387"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="JBU-Al-30T" firstAttribute="top" secondItem="qcB-Or-fcj" secondAttribute="top" id="8wQ-qa-OWb"/>
-                                                <constraint firstItem="RPF-iT-K8D" firstAttribute="top" secondItem="JBU-Al-30T" secondAttribute="bottom" constant="8" id="Bgb-wt-CyW"/>
-                                                <constraint firstItem="JBU-Al-30T" firstAttribute="leading" secondItem="qcB-Or-fcj" secondAttribute="leading" id="F3b-dS-ObU"/>
-                                                <constraint firstAttribute="trailing" secondItem="JBU-Al-30T" secondAttribute="trailing" id="UGO-4m-Duj"/>
-                                                <constraint firstItem="RPF-iT-K8D" firstAttribute="leading" secondItem="qcB-Or-fcj" secondAttribute="leading" constant="8" id="kYw-s0-rZF"/>
-                                                <constraint firstAttribute="bottom" secondItem="RPF-iT-K8D" secondAttribute="bottom" constant="8" id="mdR-Uc-eDQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="RPF-iT-K8D" secondAttribute="trailing" constant="8" id="wvt-nq-7Io"/>
+                                                <constraint firstItem="zGO-Kj-2xA" firstAttribute="leading" secondItem="qcB-Or-fcj" secondAttribute="leading" id="Bxr-1r-wys"/>
+                                                <constraint firstItem="zGO-Kj-2xA" firstAttribute="top" secondItem="qcB-Or-fcj" secondAttribute="top" id="K7P-8C-tKN"/>
+                                                <constraint firstAttribute="bottom" secondItem="zGO-Kj-2xA" secondAttribute="bottom" id="bcW-fl-afz"/>
+                                                <constraint firstAttribute="trailing" secondItem="zGO-Kj-2xA" secondAttribute="trailing" id="hfw-Lq-6iA"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="245" height="387"/>
                                         <connections>
-                                            <outlet property="imageView" destination="JBU-Al-30T" id="ITy-qS-lZj"/>
-                                            <outlet property="titleLabel" destination="RPF-iT-K8D" id="akO-VG-hvQ"/>
+                                            <outlet property="cardView" destination="zGO-Kj-2xA" id="jkC-B6-OnJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -85,13 +73,14 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fm4-Zm-CIZ" secondAttribute="trailing" constant="20" id="8Hd-lf-eDo"/>
                             <constraint firstItem="Fm4-Zm-CIZ" firstAttribute="top" secondItem="mmk-KT-JK2" secondAttribute="bottom" constant="8" id="Ca5-KL-25z"/>
-                            <constraint firstAttribute="bottom" secondItem="Fm4-Zm-CIZ" secondAttribute="bottom" id="RGt-EY-Tag"/>
+                            <constraint firstItem="Fm4-Zm-CIZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Gh4-Rn-0TC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mmk-KT-JK2" secondAttribute="trailing" constant="20" id="UHH-66-FIt"/>
                             <constraint firstItem="mmk-KT-JK2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XCH-9b-HJS"/>
                             <constraint firstItem="mmk-KT-JK2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="YGB-Jh-Hag"/>
                             <constraint firstItem="Fm4-Zm-CIZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fR8-DG-7Av"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="nZ8-sG-2Go"/>
                     <navigationItem key="navigationItem" id="qCQ-xL-h4d">
                         <nil key="title"/>
                     </navigationItem>
@@ -102,7 +91,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="134.59821428571428"/>
+            <point key="canvasLocation" x="2868.115942028986" y="134.59821428571428"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="eMb-bL-6oa">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesViewController" id="qZt-J3-SeE" customClass="FavoritesViewController" customModule="PokemonApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gir-zc-ztA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lvb-O3-xTw">
+                                <rect key="frame" x="20" y="96" width="374" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3XH-Pj-cpc">
+                                    <size key="itemSize" width="245" height="387"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardsCollectionViewCell" id="zQv-VK-2bs" customClass="CardsCollectionViewCell" customModule="PokemonApp" customModuleProvider="target">
+                                        <rect key="frame" x="64.5" y="0.0" width="245" height="387"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZnY-4H-8P6">
+                                            <rect key="frame" x="0.0" y="0.0" width="245" height="387"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMc-hg-yri" customClass="CardView" customModule="PokemonApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="387"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aMc-hg-yri" firstAttribute="top" secondItem="ZnY-4H-8P6" secondAttribute="top" id="7Un-bo-J8u"/>
+                                                <constraint firstAttribute="trailing" secondItem="aMc-hg-yri" secondAttribute="trailing" id="Cj6-x5-AMQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="aMc-hg-yri" secondAttribute="bottom" id="R0Q-hm-pqz"/>
+                                                <constraint firstItem="aMc-hg-yri" firstAttribute="leading" secondItem="ZnY-4H-8P6" secondAttribute="leading" id="vOe-FA-oa9"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="245" height="387"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="aMc-hg-yri" id="4ep-IL-qbV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a7x-vd-pkj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lvb-O3-xTw" firstAttribute="bottom" secondItem="a7x-vd-pkj" secondAttribute="bottom" id="BVq-RB-0Zf"/>
+                            <constraint firstItem="a7x-vd-pkj" firstAttribute="trailing" secondItem="lvb-O3-xTw" secondAttribute="trailing" constant="20" id="Iif-XT-VMm"/>
+                            <constraint firstItem="lvb-O3-xTw" firstAttribute="top" secondItem="a7x-vd-pkj" secondAttribute="top" constant="8" id="TLZ-OE-foD"/>
+                            <constraint firstItem="lvb-O3-xTw" firstAttribute="leading" secondItem="a7x-vd-pkj" secondAttribute="leading" constant="20" id="efK-YH-Wq8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="3We-yd-wjG"/>
+                    <connections>
+                        <outlet property="collectionView" destination="lvb-O3-xTw" id="qOg-r4-ppG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YjP-mr-Bmy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866.666666666667" y="863.83928571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Xz-em-Htl">
@@ -115,7 +167,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ThD-a3-L2w"/>
+                        <segue destination="C2n-qA-hNc" kind="relationship" relationship="rootViewController" id="ThD-a3-L2w"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZu-Ya-q8w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -212,7 +264,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7x-52-XvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2859" y="135"/>
+            <point key="canvasLocation" x="3768.115942028986" y="134.59821428571428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6Qt-ch-PKk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="C2n-qA-hNc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="EKv-ui-96y"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nuf-WY-bRV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="8TG-lI-m0K"/>
+                        <segue destination="qZt-J3-SeE" kind="relationship" relationship="viewControllers" id="sCl-bO-91A"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Bw-xj-o1R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="134.59821428571428"/>
         </scene>
     </scenes>
     <designables>
@@ -221,6 +292,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

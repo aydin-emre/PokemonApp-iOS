@@ -7,6 +7,8 @@
 
 import Foundation
 import RealmSwift
+import RxSwift
+import RxCocoa
 
 public class DatabaseManager {
 
@@ -25,6 +27,7 @@ public class DatabaseManager {
                             realm.add(card.detached())
                         }
                         DispatchQueue.main.async {
+                            self.updateFavoritesInViewModel()
                             completion(true)
                         }
                     } else {
@@ -48,6 +51,7 @@ public class DatabaseManager {
                                 realm.delete(delete)
                             }
                             DispatchQueue.main.async {
+                                self.updateFavoritesInViewModel()
                                 completion(true)
                             }
                         } else {
@@ -101,6 +105,15 @@ public class DatabaseManager {
                     }
                 }
             }
+        }
+    }
+
+    func updateFavoritesInViewModel() {
+        getFavorites { cards in
+            FavoriteCardsViewModel
+                .shared
+                .cards
+                .onNext(cards)
         }
     }
 

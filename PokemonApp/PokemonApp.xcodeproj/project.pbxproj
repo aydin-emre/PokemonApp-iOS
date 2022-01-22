@@ -35,6 +35,10 @@
 		C3D10CB4279C029E0099909F /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CB3279C029E0099909F /* CardDetailViewController.swift */; };
 		C3D10CB8279C08F30099909F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CB7279C08F30099909F /* DatabaseManager.swift */; };
 		C3D10CBA279C0C240099909F /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CB9279C0C240099909F /* RealmExtension.swift */; };
+		C3D10CBC279C236C0099909F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CBB279C236C0099909F /* FavoritesViewController.swift */; };
+		C3D10CC0279C23FA0099909F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CBE279C23FA0099909F /* CardView.swift */; };
+		C3D10CC1279C23FA0099909F /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D10CBF279C23FA0099909F /* CardView.xib */; };
+		C3D10CC3279C37AF0099909F /* FavoriteCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CC2279C37AF0099909F /* FavoriteCardsViewModel.swift */; };
 		E5B1E8215E0AC1F261D49EE0 /* Pods_PokemonApp_PokemonAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D127157ED4E31F65838069F /* Pods_PokemonApp_PokemonAppUITests.framework */; };
 		FEEE46558CC94ACEFD57A8A5 /* Pods_PokemonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682F9CE8F6B19D0489093580 /* Pods_PokemonApp.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +100,10 @@
 		C3D10CB3279C029E0099909F /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		C3D10CB7279C08F30099909F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C3D10CB9279C0C240099909F /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
+		C3D10CBB279C236C0099909F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		C3D10CBE279C23FA0099909F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C3D10CBF279C23FA0099909F /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		C3D10CC2279C37AF0099909F /* FavoriteCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardsViewModel.swift; sourceTree = "<group>"; };
 		DF98CED7DCED242845CB0B8B /* Pods-PokemonAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonAppTests.release.xcconfig"; path = "Target Support Files/Pods-PokemonAppTests/Pods-PokemonAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +151,7 @@
 		C333DF602799B49E00D58426 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				C3D10CBD279C23DC0099909F /* CardView */,
 				C333DF612799B4AC00D58426 /* DesignableUITextField.swift */,
 			);
 			path = Custom;
@@ -228,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C3858DEA279899EF00E87A68 /* CardsViewModel.swift */,
+				C3D10CC2279C37AF0099909F /* FavoriteCardsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -247,6 +257,7 @@
 				C3663F6427974AB60075A892 /* BaseViewController.swift */,
 				C3663F6627974AC30075A892 /* CardsViewController.swift */,
 				C3D10CB3279C029E0099909F /* CardDetailViewController.swift */,
+				C3D10CBB279C236C0099909F /* FavoritesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +308,15 @@
 				C3858DE8279897C600E87A68 /* CardsCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C3D10CBD279C23DC0099909F /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				C3D10CBE279C23FA0099909F /* CardView.swift */,
+				C3D10CBF279C23FA0099909F /* CardView.xib */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		E460E499CEC71F627424F54C /* Frameworks */ = {
@@ -420,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3663F35279748FC0075A892 /* LaunchScreen.storyboard in Resources */,
+				C3D10CC1279C23FA0099909F /* CardView.xib in Resources */,
 				C3663F32279748FC0075A892 /* Assets.xcassets in Resources */,
 				C3663F30279748FA0075A892 /* Main.storyboard in Resources */,
 			);
@@ -567,12 +588,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D10CC3279C37AF0099909F /* FavoriteCardsViewModel.swift in Sources */,
 				C3663F6D27974B060075A892 /* NetworkManager.swift in Sources */,
 				C333DF642799D80500D58426 /* UITextFieldExtension.swift in Sources */,
 				C3663F6527974AB60075A892 /* BaseViewController.swift in Sources */,
 				C3663F6B27974AED0075A892 /* NetworkError.swift in Sources */,
 				C333DF622799B4AC00D58426 /* DesignableUITextField.swift in Sources */,
 				C3663F77279759C70075A892 /* Attack.swift in Sources */,
+				C3D10CBC279C236C0099909F /* FavoritesViewController.swift in Sources */,
 				C3663F29279748FA0075A892 /* AppDelegate.swift in Sources */,
 				C3858DE9279897C600E87A68 /* CardsCollectionViewCell.swift in Sources */,
 				C3D10CB4279C029E0099909F /* CardDetailViewController.swift in Sources */,
@@ -586,6 +609,7 @@
 				C3663F6927974ADC0075A892 /* Alert.swift in Sources */,
 				C3663F73279759880075A892 /* Ability.swift in Sources */,
 				C3663F79279759E00075A892 /* Resistance.swift in Sources */,
+				C3D10CC0279C23FA0099909F /* CardView.swift in Sources */,
 				C3663F71279757DF0075A892 /* Card.swift in Sources */,
 				C3D10CB8279C08F30099909F /* DatabaseManager.swift in Sources */,
 			);
