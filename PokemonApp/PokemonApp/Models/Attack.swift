@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Attack: Codable {
+class Attack: Object, Decodable {
 
-    let cost: [String]?
-    let name, text, damage: String?
-    let convertedEnergyCost: Int?
+    let cost = List<String>()
+    @objc dynamic var name: String?
+    @objc dynamic var text: String?
+    @objc dynamic var damage: String?
+    dynamic var convertedEnergyCost: Int?
 
 }

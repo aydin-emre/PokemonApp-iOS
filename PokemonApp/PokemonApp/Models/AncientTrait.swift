@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct AncientTrait: Codable {
+class AncientTrait: Object, Decodable {
 
-    let name, text: String?
+    @objc dynamic var name: String?
+    @objc dynamic var text: String?
 
 }

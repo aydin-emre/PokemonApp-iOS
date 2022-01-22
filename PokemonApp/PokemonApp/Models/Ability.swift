@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Ability: Codable {
+class Ability: Object, Decodable {
 
-    let name, text: String?
-    let type: TypeEnum?
+    @objc dynamic var name: String?
+    @objc dynamic var text: String?
+    dynamic var type: TypeEnum?
 
 }
 

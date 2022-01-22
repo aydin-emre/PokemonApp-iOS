@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Resistance: Codable {
+class Resistance: Object, Decodable {
 
-    let type: String?
-    let value: String?
+    @objc dynamic var type: String?
+    @objc dynamic var value: String?
 
 }

@@ -32,6 +32,9 @@
 		C3663F79279759E00075A892 /* Resistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3663F78279759E00075A892 /* Resistance.swift */; };
 		C3858DE9279897C600E87A68 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3858DE8279897C600E87A68 /* CardsCollectionViewCell.swift */; };
 		C3858DEB279899EF00E87A68 /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3858DEA279899EF00E87A68 /* CardsViewModel.swift */; };
+		C3D10CB4279C029E0099909F /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CB3279C029E0099909F /* CardDetailViewController.swift */; };
+		C3D10CB8279C08F30099909F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CB7279C08F30099909F /* DatabaseManager.swift */; };
+		C3D10CBA279C0C240099909F /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D10CB9279C0C240099909F /* RealmExtension.swift */; };
 		E5B1E8215E0AC1F261D49EE0 /* Pods_PokemonApp_PokemonAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D127157ED4E31F65838069F /* Pods_PokemonApp_PokemonAppUITests.framework */; };
 		FEEE46558CC94ACEFD57A8A5 /* Pods_PokemonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682F9CE8F6B19D0489093580 /* Pods_PokemonApp.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +93,9 @@
 		C3663F78279759E00075A892 /* Resistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resistance.swift; sourceTree = "<group>"; };
 		C3858DE8279897C600E87A68 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3858DEA279899EF00E87A68 /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
+		C3D10CB3279C029E0099909F /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		C3D10CB7279C08F30099909F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		C3D10CB9279C0C240099909F /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		DF98CED7DCED242845CB0B8B /* Pods-PokemonAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonAppTests.release.xcconfig"; path = "Target Support Files/Pods-PokemonAppTests/Pods-PokemonAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,6 +246,7 @@
 			children = (
 				C3663F6427974AB60075A892 /* BaseViewController.swift */,
 				C3663F6627974AC30075A892 /* CardsViewController.swift */,
+				C3D10CB3279C029E0099909F /* CardDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				C3663F6C27974B060075A892 /* NetworkManager.swift */,
+				C3D10CB7279C08F30099909F /* DatabaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -278,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				C333DF632799D80500D58426 /* UITextFieldExtension.swift */,
+				C3D10CB9279C0C240099909F /* RealmExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -566,16 +575,19 @@
 				C3663F77279759C70075A892 /* Attack.swift in Sources */,
 				C3663F29279748FA0075A892 /* AppDelegate.swift in Sources */,
 				C3858DE9279897C600E87A68 /* CardsCollectionViewCell.swift in Sources */,
+				C3D10CB4279C029E0099909F /* CardDetailViewController.swift in Sources */,
 				C3663F6727974AC30075A892 /* CardsViewController.swift in Sources */,
 				C3663F6F279757C60075A892 /* CardResponse.swift in Sources */,
 				C3858DEB279899EF00E87A68 /* CardsViewModel.swift in Sources */,
 				C3663F2B279748FA0075A892 /* SceneDelegate.swift in Sources */,
 				C3663F62279749DC0075A892 /* Constants.swift in Sources */,
 				C3663F75279759B00075A892 /* AncientTrait.swift in Sources */,
+				C3D10CBA279C0C240099909F /* RealmExtension.swift in Sources */,
 				C3663F6927974ADC0075A892 /* Alert.swift in Sources */,
 				C3663F73279759880075A892 /* Ability.swift in Sources */,
 				C3663F79279759E00075A892 /* Resistance.swift in Sources */,
 				C3663F71279757DF0075A892 /* Card.swift in Sources */,
+				C3D10CB8279C08F30099909F /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
